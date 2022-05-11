@@ -62,27 +62,27 @@ mvn spring-boot:run
 
 #### 登录（该页面是在哔哩上copy别人的）
 
-[![OdgHbD.md.png](https://s1.ax1x.com/2022/05/11/OdgHbD.md.png)](https://imgtu.com/i/OdgHbD)
+![OdgHbD.md.png](https://s1.ax1x.com/2022/05/11/OdgHbD.md.png)
 
 #### 首页
 
-[![OdgjPA.md.png](https://s1.ax1x.com/2022/05/11/OdgjPA.md.png)](https://imgtu.com/i/OdgjPA)
+![OdgjPA.md.png](https://s1.ax1x.com/2022/05/11/OdgjPA.md.png)
 
 #### 员工信息
 
-[![Od22sf.md.png](https://s1.ax1x.com/2022/05/11/Od22sf.md.png)](https://imgtu.com/i/Od22sf)
+![Od22sf.md.png](https://s1.ax1x.com/2022/05/11/Od22sf.md.png)
 
 #### 搜索
 
-[![Od2RL8.md.png](https://s1.ax1x.com/2022/05/11/Od2RL8.md.png)](https://imgtu.com/i/Od2RL8)
+![Od2RL8.md.png](https://s1.ax1x.com/2022/05/11/Od2RL8.md.png)
 
 #### 部门信息
 
-[![Od2feS.md.png](https://s1.ax1x.com/2022/05/11/Od2feS.md.png)](https://imgtu.com/i/Od2feS)
+![Od2feS.md.png](https://s1.ax1x.com/2022/05/11/Od2feS.md.png)
 
 #### 新增
 
-[![Od2gQP.md.png](https://s1.ax1x.com/2022/05/11/Od2gQP.md.png)](https://imgtu.com/i/Od2gQP)
+![Od2gQP.md.png](https://s1.ax1x.com/2022/05/11/Od2gQP.md.png)
 
 
 
