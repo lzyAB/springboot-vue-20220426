@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<!--namespace用于绑定dao接口-->
+<mapper namespace="com.ilzya.springboot.dao.EmpDao">
+
+    <!--	id用来绑定dao层定义的接口-->
+    <!--	parameterType是传递的参数-->
+    <!--	resultType是返回的数据类型-->
+    <resultMap id="emp_dept" type="Emp">
+        <id column="id" property="id" />
+        <result column="ename" property="ename" />
+        <result column="job" property="job" />
+        <result column="phone" property="phone" />
+        <result column="birdate" property="birdate" />
+        <result column="sal" property="sal" />
+        <result column="comm" property="comm" />
+        <result column="carno" property="carno" />
+
+        <association property="dept" javaType="Dept">
+            <id column="id" property="id"/>
+            <result column="dname" property="dname" />
+            <result column="address" property="address" />
+            <result column="status" property="status" />
+        </association>
+
+    </resultMap>
+
+    <select id="queryEmpAndDept" resultMap="emp_dept">
+        SELECT * FROM emp,dept WHERE emp.deptno = dept.id
+    </select>
+
+    <update id="changeInfo" parameterType="Emp">
+        UPDATE emp
+        <set>
+
+--             UPDATE `20220426`.`emp` SET `ename` = '张三', `phone` = '17622222222',
+--             `job` = 'UI设计', `birdate` = '1997-01-01', `sal` = 9000.00,
+--             `carno` = '410521199701011234', `deptno` = 1 WHERE `id` = 1;
+
+            <if test="ename != null">
+                ename = #{ename},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="job != null">
+                job = #{job},
+            </if>
+            <if test="birdate != null">
+                birdate = #{birdate},
+            </if>
+            <if test="sal != null">
+                sal = #{sal},
+            </if>
+            <if test="carno != null">
+                carno = #{carno},
+            </if>
+            <if test="deptno != null">
+                deptno = #{deptno}
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+
+
+    <select id="queryByNameAndDeptId" resultMap="emp_dept">
+        SELECT * FROM emp,dept WHERE emp.deptno = dept.id
+        <if test="ename != null">
+            and ename like '%${ename}%'
+        </if>
+        <if test="deptno != null">
+            and deptno = #{deptno}
+        </if>
+    </select>
+
+
+</mapper>

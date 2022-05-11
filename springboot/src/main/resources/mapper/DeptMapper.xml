@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<!--namespace用于绑定dao接口-->
+<mapper namespace="com.ilzya.springboot.dao.DeptDao">
+
+    <!--	id用来绑定dao层定义的接口-->
+    <!--	parameterType是传递的参数-->
+    <!--	resultType是返回的数据类型-->
+
+<!--    修改部门状态-->
+    <update id="changeStatus">
+        UPDATE dept SET status = MOD(status + 1,2) WHERE id = #{id}
+    </update>
+
+    <update id="changeInfo">
+        UPDATE dept
+        <set>
+            <if test="dname != null">
+                dname = #{dname},
+            </if>
+            <if test="address != null">
+                address = #{address}
+            </if>
+        </set>
+        <where>
+            id = #{id}
+        </where>
+    </update>
+
+
+    <select id="queryByNameAndAddress" resultType="Dept">
+        SELECT * FROM dept
+        <where>
+            <if test="dname != null">
+                dname like '%${dname}%'
+            </if>
+            <if test="address != null">
+                and address like '%${address}%'
+            </if>
+        </where>
+    </select>
+
+</mapper>

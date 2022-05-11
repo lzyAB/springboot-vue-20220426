@@ -1,0 +1,45 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/20220426
+    username: root
+    password: 123456
+
+  redis:
+    # redis服务器地址（默认为loaclhost）
+    host: 127.0.0.1
+    # redis端口（默认为6379）
+    port: 6379
+    # redis访问密码（默认为空）
+    password:
+    # redis连接超时时间（单位毫秒）
+    timeout: 10000
+    # redis连接池配置
+    pool:
+      # 最大可用连接数（默认为8，负数表示无限）
+      max-active: 5000
+      # 最大空闲连接数（默认为8，负数表示无限）
+      max-idle: 1500
+      # 最小空闲连接数（默认为0，该值只有为正数才有用）
+      min-idle: 0
+      # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
+      max-wait: -1
+    block-when-exhausted: true
+    database: 0
+
+
+
+
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true
+
+
+mybatis:
+  type-aliases-package: com.ilzya.springboot.entity #实体类起别名
+  mapper-locations: classpath:mapper/*Mapper.xml #扫描mybatis mapper.xml文件
